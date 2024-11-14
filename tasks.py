@@ -12,13 +12,11 @@ import numpy as np
 # The output length can be computed as follows:
 # (input_length - kernel_length + 1)
 
-# Your code here:
-# -----------------------------------------------
 
 def compute_output_size_1d(input_array, kernel_array):
     input_length = len(input_array)
     kernel_length = len(kernel_array)
-    out_length = input_length - kernel_length + 1
+    out_length = input_length - kernel_length + 1 
     return out_length
 
 
