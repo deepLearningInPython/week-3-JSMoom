@@ -16,8 +16,10 @@ import numpy as np
 # -----------------------------------------------
 
 def compute_output_size_1d(input_array, kernel_array):
-    length = len(input_array) - len(kernel_array) + 1
-    return length
+    input_length = len(input_array)
+    kernel_length = len(kernel_array)
+    out_length = input_length - kernel_length + 1
+    return out_length
 
 
 # -----------------------------------------------
@@ -62,8 +64,12 @@ print(convolve_1d(input_array, kernel_array))
 # -----------------------------------------------
 
 def compute_output_size_2d(input_matrix, kernel_matrix):
-    high = input_matrix.shape[0] - kernel_matrix.shape[0] + 1
-    wide = input_matrix.shape[1] - kernel_matrix.shape[1] + 1
+    in_high = input_matrix.shape[0]
+    kern_high = kernel_matrix.shape[0]
+    in_wide = input_matrix.shape[1]
+    kern_wide = kernel_matrix.shape[1]
+    high = in_high - kern_high + 1
+    wide = in_wide - kern_wide + 1
     dims = (high, wide)
     return dims
 
